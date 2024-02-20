@@ -29,18 +29,14 @@ df = pd.DataFrame(data, columns=columns)
 df = df.set_index(["Component 1", "Component 2", "Component 3",], drop=False) 
 
 
-
+df["Depth"] = df.apply(lambda row: sum(1 for x in row if x), axis=0)
 
 df["Hierarchy"] = df.apply(lambda row: "||".join(filter(None, row[:-2])), axis=1)
 
-
-df["Depth"] = df.apply(lambda row: sum(1 for x in row if x), axis=1)
-
 df=df [["Component 1", "Component 2", "Component 3", "Component 4", "Depth","Part Number","Hierarchy",]]
-
 
 df = df.set_index(["Component 1", "Component 2", "Component 3",],drop=False)
 
-df.to_excel("first5.xlsx", index=False)
+df.to_excel("first4.xlsx", index=False)
 
 
