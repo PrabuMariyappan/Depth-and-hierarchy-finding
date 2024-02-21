@@ -1,6 +1,6 @@
 import pandas as pd
 
-# Your input data
+
 data = [
     ["Axel system", "", "", "", "A00000001"],
     ["Axel system", "Front Axel", "", "", "A00000002"],
